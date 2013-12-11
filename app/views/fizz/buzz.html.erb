@@ -1,0 +1,41 @@
+<h1>Mein erstes Programm</h1>
+<p>Hoffentlich klappt es </p>
+
+
+<table border="1">
+<tr>
+<td><b>Zahl</td></b>
+<td><b>Teilbar durch <%=@fizz_number%></td></b>
+<td><b>Teilbar durch <%=@buzz_number%></td></b>
+<td><b><%=@fizz_name+@buzz_name%></td></b>
+</tr>
+
+<% a=1 
+while a <=@max_number %>
+<tr>
+<td><%=a%></td>
+
+<% if a%@fizz_number==0 && a%@buzz_number==0%> 
+<td>x</td>
+<td>x</td>
+<td><%=@fizz_name+@buzz_name%></td>
+<%elsif a%@fizz_number==0 %>
+<td>x</td>
+<td></td>
+<td><%=@fizz_name%></td>
+
+<%elsif a%@buzz_number==0 %>
+<td></td>
+<td>x</td>
+<td><%=@buzz_name%></td>
+</tr>
+
+<% else %>
+<td></td>
+<td></td>
+<td><%=a%></td>
+<% end 
+ a=a+1 
+end %>
+
+</table>
